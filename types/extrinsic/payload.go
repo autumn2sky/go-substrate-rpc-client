@@ -167,9 +167,9 @@ var PayloadMutatorFns = map[extensions.SignedExtensionName]PayloadMutatorFn{
 			Name:  TipSignedField,
 			Value: types.NewUCompactFromUInt(0),
 		})
-		payload.SignedExtraFields = append(payload.SignedExtraFields, &SignedField{
+		payload.SignedFields = append(payload.SignedFields, &SignedField{
 			Name:  AssetIDSignedField,
-			Value: types.AssetID{},
+			Value: types.OptionU32{},
 		})
 	},
 	extensions.CheckMetadataHashSignedExtension: func(payload *Payload) {
